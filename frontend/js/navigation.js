@@ -53,11 +53,11 @@
     });
 
     /* Active link based on current page */
-    const currentPage = (location.pathname.split('/').pop() || 'index.html');
-    const emmicPages = ['evaluation.html', 'management.html', 'marketplace.html', 'investment.html'];
+    const currentPage = (location.pathname.split('/').pop() || '/');
+    const emmicPages = ['/evaluation', '/management', '/marketplace', '/investment'];
     links.forEach(function (link) {
       const href = link.getAttribute('href');
-      if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      if (href === currentPage || (currentPage === '' && href === '/')) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
       }

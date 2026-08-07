@@ -20,28 +20,27 @@
 
 <header class="navbar" id="navbar">
   <div class="container navbar-inner">
-    <a href="index.html" class="logo"><span class="logo-mark">E</span><span class="logo-text">EEMMIC</span></a>
+    <a href="/" class="logo"><span class="logo-mark">E</span><span class="logo-text">EEMMIC</span></a>
     <nav class="nav-links" id="navLinks">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="solutions.html" class="nav-link">Solutions</a>
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/solutions" class="nav-link">Solutions</a>
       <div class="nav-item has-dropdown">
-        <a href="projects.html" class="nav-link">EMMIC</a>
+        <a href="/projects" class="nav-link">EMMIC</a>
         <button class="dropdown-caret-btn" aria-label="Toggle EMMIC menu" aria-expanded="false"><svg class="dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="dropdown-menu">
-          <a href="evaluation.html" class="dropdown-link">Evaluation</a>
-          <a href="management.html" class="dropdown-link">Management</a>
-          <a href="marketplace.html" class="dropdown-link">Marketplace</a>
-          <a href="investment.html" class="dropdown-link">Investment</a>
+          <a href="/evaluation" class="dropdown-link">Evaluation</a>
+          <a href="/management" class="dropdown-link">Management</a>
+          <a href="/marketplace" class="dropdown-link">Marketplace</a>
+          <a href="/investment" class="dropdown-link">Investment</a>
         </div>
       </div>
-      <a href="sustainability.html" class="nav-link">Sustainability</a>
-      <a href="innovation.html" class="nav-link">Innovation</a>
-      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="/sustainability" class="nav-link">Sustainability</a>
+      <a href="/innovation" class="nav-link">Innovation</a>
+      <a href="/contact" class="nav-link">Contact</a>
     </nav>
     <div class="navbar-actions">
-      <a href="signup.html" class="nav-link">Sign Up</a>
-      <a href="contact.html" class="btn btn-primary btn-sm">Get in Touch</a>
+      <a href="/contact" class="btn btn-primary btn-sm">Get in Touch</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -55,7 +54,7 @@
         <div class="form-card__head">
           <div class="form-card__eyebrow">Account</div>
           <h1 style="font-size:1.7rem; margin-bottom:8px;">Welcome back.</h1>
-          <p style="color:var(--color-text-muted); font-size:0.94rem;">Buyers, suppliers, investors, and admins all log in here.</p>
+          <p style="color:var(--color-text-muted); font-size:0.94rem;">Buyers, suppliers, investors, and admins all log in here. Accounts are created by an EEMMIC admin — look for an invite email if you don't have one yet.</p>
         </div>
         <form id="loginForm">
           <div class="field"><label for="email">Email Address</label><input type="email" id="email" required></div>
@@ -64,13 +63,14 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </button>
         </form>
-        <p style="margin-top:20px; font-size:0.9rem; color:var(--color-text-muted); text-align:center;">Don't have an account? <a href="signup.html" style="color:var(--color-secondary); font-weight:600;">Sign up</a></p>
       </div>
     </div>
   </section>
 
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
 <script src="js/db-client.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/main.js"></script>

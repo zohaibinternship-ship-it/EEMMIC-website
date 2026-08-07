@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>My Dashboard | EEMMIC</title>
-<meta name="description" content="Your EEMMIC account — submitted requirements and their status.">
+<title>My Services | EEMMIC</title>
+<meta name="description" content="Your EEMMIC portal services, applications, submissions, and investments in one place.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23101014%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22Arial%22 fill=%22%23FFD400%22 text-anchor=%22middle%22>E</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,115 +13,76 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/portal.css">
 </head>
-<body>
+<body data-page-title="My Services" data-page-subtitle="Your EEMMIC portal access, applications, and account activity.">
 
 <div class="page-loader" id="pageLoader"><div class="loader-mark">E</div></div>
 
-<header class="navbar" id="navbar">
-  <div class="container navbar-inner">
-    <a href="index.html" class="logo"><span class="logo-mark">E</span><span class="logo-text">EEMMIC</span></a>
-    <nav class="nav-links" id="navLinks">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="solutions.html" class="nav-link">Solutions</a>
-      <div class="nav-item has-dropdown">
-        <a href="projects.html" class="nav-link">EMMIC</a>
-        <button class="dropdown-caret-btn" aria-label="Toggle EMMIC menu" aria-expanded="false"><svg class="dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="dropdown-menu">
-          <a href="evaluation.html" class="dropdown-link">Evaluation</a>
-          <a href="management.html" class="dropdown-link">Management</a>
-          <a href="marketplace.html" class="dropdown-link">Marketplace</a>
-          <a href="investment.html" class="dropdown-link">Investment</a>
-        </div>
-      </div>
-      <a href="sustainability.html" class="nav-link">Sustainability</a>
-      <a href="innovation.html" class="nav-link">Innovation</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-    <div class="navbar-actions">
-      <button class="nav-link" id="logoutBtn" style="background:none; border:none; cursor:pointer; font:inherit;">Log Out</button>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</header>
+<div id="portalApp" style="display:none;">
+  <aside id="portalSidebar"></aside>
+  <div class="portal-content-col">
+    <header id="portalHeader"></header>
+    <main id="mainContent">
 
-<main>
+      <div id="serviceNotices" style="margin-bottom:20px;"></div>
 
-  <section class="page-hero">
-    <div class="hero-orb orb-1"></div>
-    <div class="hero-orb orb-2"></div>
-    <div class="hero-grid-lines"></div>
-    <div class="container" style="position:relative; z-index:1;">
-      <div class="page-hero-panel">
-      <div class="breadcrumb"><a href="index.html">Home</a> / <span>My Dashboard</span></div>
-      <div class="eyebrow" id="roleEyebrow">Account</div>
-      <h1 id="welcomeHeading">Welcome.</h1>
-      <p id="welcomeSub">Your submitted requirements and their status.</p>
-      </div>
-    </div>
-  </section>
+      <div class="portal-card__head" style="margin-bottom:14px;"><h3>My services</h3></div>
+      <div class="portal-grid portal-grid--3" id="servicesGrid" style="margin-bottom:28px;"></div>
 
-  <section>
-    <div class="container">
-
-      <div class="dashboard-stats reveal" id="statsRow">
-        <div class="dashboard-stat"><div class="stat-num" id="statTotal">0</div><div class="stat-label">Submitted</div></div>
-        <div class="dashboard-stat"><div class="stat-num" id="statNew">0</div><div class="stat-label">New</div></div>
-        <div class="dashboard-stat"><div class="stat-num" id="statContacted">0</div><div class="stat-label">In Progress</div></div>
-        <div class="dashboard-stat"><div class="stat-num" id="statClosed">0</div><div class="stat-label">Closed</div></div>
-      </div>
-
-      <div class="submissions-table-wrap reveal" style="margin-bottom:56px;">
-        <table class="submissions-table">
-          <thead>
-            <tr>
-              <th>Submitted</th>
-              <th>Stage</th>
-              <th>Message</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="submissionsBody">
-            <tr><td colspan="4" class="submissions-loading">Loading…</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="form-card reveal" style="max-width:640px;">
+      <div class="form-card reveal" style="max-width:640px; margin-bottom:32px;">
         <div class="form-success" id="formSuccess">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;flex-shrink:0;"><path d="M20 6L9 17l-5-5"/></svg>
-          Submitted — it'll appear in the table above once the page refreshes.
+          Submitted — an admin will review your request.
         </div>
-        <h2 style="font-size:1.3rem; margin-bottom:8px;">Submit a new requirement</h2>
-        <p style="color:var(--color-text-muted); margin-bottom:24px; font-size:0.94rem;">This is linked to your account automatically.</p>
+        <div class="form-card__head">
+          <div class="form-card__eyebrow">Apply</div>
+          <h2 style="font-size:1.2rem; margin-bottom:8px;">Apply for another service.</h2>
+        </div>
         <form id="requirementForm">
           <div class="field">
-            <label for="service">Stage</label>
+            <label for="service">Framework</label>
             <select id="service">
-              <option value="evaluation">Evaluation — assessing a site or load profile</option>
-              <option value="management">Management — tracking an in-progress deal</option>
-              <option value="marketplace">Marketplace — bidding or sourcing as an EPC</option>
-              <option value="investment">Investment — financing a matched deal</option>
+              <option value="evaluation">Evaluation</option>
+              <option value="management">Management</option>
+              <option value="marketplace">Marketplace</option>
+              <option value="investment">Investment</option>
             </select>
           </div>
-          <div class="field"><label for="message">Message</label><textarea id="message" required></textarea></div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Submit
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </button>
+          <div class="field"><label for="message">Tell us what you need</label><textarea id="message" rows="3" required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit</button>
         </form>
       </div>
 
-    </div>
-  </section>
+      <div class="portal-card__head" style="margin-bottom:14px;"><h3>My submissions</h3></div>
+      <div class="portal-table-wrap" style="margin-bottom:32px;">
+        <table class="portal-table">
+          <thead><tr><th>Submitted</th><th>Framework</th><th>Message</th><th>Status</th></tr></thead>
+          <tbody id="submissionsBody"><tr><td colspan="4" class="portal-empty">Loading…</td></tr></tbody>
+        </table>
+      </div>
 
-</main>
+      <div class="portal-grid portal-grid--2" id="investStatsRow" style="margin-bottom:14px; max-width:480px;"></div>
+      <div class="portal-card__head" style="margin-bottom:14px;"><h3>My investments</h3></div>
+      <div class="portal-table-wrap">
+        <table class="portal-table">
+          <thead><tr><th>Company</th><th>Amount</th><th>Date</th><th>Status</th><th>P&amp;L</th></tr></thead>
+          <tbody id="investmentsBody"><tr><td colspan="5" class="portal-empty">Loading…</td></tr></tbody>
+        </table>
+      </div>
 
+    </main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
 <script src="js/db-client.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/portal-nav-data.js"></script>
+<script src="js/portal-widgets.js"></script>
+<script src="js/portal-shell.js"></script>
 <script src="js/main.js"></script>
-<script src="js/navigation.js"></script>
-<script src="js/animations.js"></script>
 <script src="js/my-dashboard.js"></script>
 </body>
 </html>

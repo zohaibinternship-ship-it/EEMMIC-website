@@ -1,7 +1,5 @@
-/* Protects GET/PATCH /api/submissions (the admin dashboard's data).
-   TODO: Supabase has been removed. Once the new database/auth is wired up,
-   restore token verification + an admin-role check here. Until then this
-   fails closed (501) rather than silently granting access. */
-module.exports = async function requireAdmin(req, res, next) {
-  return res.status(501).json({ error: 'Admin authentication is not connected to a database yet.' });
-};
+/* Protects every admin-only route: verifies the caller's Supabase session
+   and that their eemmic_profiles row has role = 'admin'. Thin wrapper around
+   the more general requireRole so existing imports of this file keep working
+   unchanged. */
+module.exports = require('./requireRole')('admin');

@@ -33,9 +33,9 @@
         .then(function (profile) {
           const params = new URLSearchParams(location.search);
           const next = params.get('next');
-          const isAdmin = profile && profile.role === 'admin';
-          const fallback = isAdmin ? 'dashboard.html' : 'my-dashboard.html';
-          window.location.href = (next && next !== 'login.html') ? next : fallback;
+          const role = profile && profile.role;
+          const fallback = role === 'admin' ? '/dashboard' : role === 'manager' ? '/manager' : role === 'investor' ? '/investor' : '/my-dashboard';
+          window.location.href = (next && next !== '/login') ? next : fallback;
         })
         .catch(function (err) {
           errorBox.textContent = (err && err.message) || 'Login failed. Check your email and password.';

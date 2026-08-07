@@ -12,8 +12,7 @@ router.post('/', async (req, res) => {
     return res.status(400).json({ error: 'A valid email address is required.' });
   }
 
-  // TODO: insert { email } into the new DB's newsletter subscribers table.
-  const { error } = await db.notImplemented();
+  const { error } = await db.createNewsletterSubscriber(email);
 
   if (error && error.code !== POSTGRES_UNIQUE_VIOLATION) {
     console.error('Failed to store newsletter subscriber:', error);
