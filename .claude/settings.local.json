@@ -76,7 +76,8 @@
       "Bash(node -e \"new Function\\(require\\('fs'\\).readFileSync\\('/mnt/d/web development/Emmic/frontend/js/dashboard.js','utf8'\\)\\); console.log\\('dashboard.js OK'\\)\")",
       "Bash(node -e \"new Function\\(require\\('fs'\\).readFileSync\\('/mnt/d/web development/Emmic/frontend/js/my-dashboard.js','utf8'\\)\\); console.log\\('my-dashboard.js OK'\\)\")",
       "Bash(mkdir -p /tmp/claude-1000/-mnt-d-web-development-Emmic/3946a11a-4ee6-4005-bd18-c82b752fd509/scratchpad/femmic-ref)",
-      "Bash(unzip -o -q \"/mnt/c/Users/user/Downloads/FEMMIC-Prepreneurship-main.zip\")"
+      "Bash(unzip -o -q \"/mnt/c/Users/user/Downloads/FEMMIC-Prepreneurship-main.zip\")",
+      "Bash(xargs -I{} sh -c 'echo \"=== {} ===\"; wc -l \"{}\"')"
     ]
   }
 }

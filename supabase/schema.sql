@@ -101,9 +101,11 @@ as $$
   );
 $$;
 
+drop policy if exists "eemmic_profiles: read own" on public.eemmic_profiles;
 create policy "eemmic_profiles: read own" on public.eemmic_profiles
   for select using (auth.uid() = id);
 
+drop policy if exists "eemmic_profiles: admin reads all" on public.eemmic_profiles;
 create policy "eemmic_profiles: admin reads all" on public.eemmic_profiles
   for select using (public.eemmic_is_admin());
 
