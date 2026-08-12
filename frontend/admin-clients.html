@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Client Portal Accounts | EEMMIC Admin</title>
+<meta name="description" content="Manage EEMMIC client portal accounts: invite, block, unblock, delete, and manage linked services.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23101014%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22Arial%22 fill=%22%23FFD400%22 text-anchor=%22middle%22>E</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/portal.css">
+</head>
+<body data-require-role="admin" data-page-title="Client Portal Accounts" data-page-subtitle="Invite, block, unblock, delete, and manage services for client accounts.">
+
+<div class="page-loader" id="pageLoader"><div class="loader-mark">E</div></div>
+
+<div id="portalApp" style="display:none;">
+  <aside id="portalSidebar"></aside>
+  <div class="portal-content-col">
+    <header id="portalHeader"></header>
+    <main id="mainContent">
+
+      <div class="form-card reveal" style="max-width:640px; margin-bottom:32px;">
+        <div class="form-success" id="inviteSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;flex-shrink:0;"><path d="M20 6L9 17l-5-5"/></svg>
+          Invite sent. They'll get an email with a link to set their password.
+        </div>
+        <div class="form-card__head">
+          <div class="form-card__eyebrow">Accounts</div>
+          <h2 style="font-size:1.3rem; margin-bottom:8px;">Invite a client.</h2>
+          <p style="color:var(--color-text-muted); font-size:0.9rem;">There's no public sign-up — this is the only way buyer/supplier/investor accounts get created. They'll receive an email to set their own password.</p>
+        </div>
+        <form id="inviteForm">
+          <div class="form-row">
+            <div class="field"><label for="inviteName">Full Name</label><input type="text" id="inviteName" required></div>
+            <div class="field"><label for="inviteOrganisation">Organisation</label><input type="text" id="inviteOrganisation"></div>
+          </div>
+          <div class="field"><label for="inviteEmail">Email Address</label><input type="email" id="inviteEmail" required></div>
+          <div class="field">
+            <label for="inviteRole">Role</label>
+            <select id="inviteRole">
+              <option value="buyer">Buyer — sourcing solar/storage for their site</option>
+              <option value="supplier">Supplier — an EPC bidding on requirements</option>
+              <option value="investor">Investor — financing matched deals</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send Invite
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="portal-grid portal-grid--4" id="clientStats" style="margin-bottom:24px;"></div>
+
+      <div class="portal-table-wrap">
+        <table class="portal-table" id="clientsTable">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Services</th>
+              <th>Status</th>
+              <th>Joined</th>
+              <th style="min-width:200px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="clientsBody">
+            <tr><td colspan="7" class="portal-empty">Loading clients…</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/db-client.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/portal-nav-data.js"></script>
+<script src="js/portal-widgets.js"></script>
+<script src="js/portal-shell.js"></script>
+<script src="js/main.js"></script>
+<script src="js/admin-clients.js"></script>
+</body>
+</html>

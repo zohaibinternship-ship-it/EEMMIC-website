@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Portfolio | EEMMIC</title>
+<meta name="description" content="Allocation across your investments.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23101014%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22Arial%22 fill=%22%23FFD400%22 text-anchor=%22middle%22>E</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/portal.css">
+</head>
+<body data-require-role="investor" data-page-view="portfolio" data-page-title="Portfolio" data-page-subtitle="Allocation across your investments.">
+
+<div class="page-loader" id="pageLoader"><div class="loader-mark">E</div></div>
+
+<div id="portalApp" style="display:none;">
+  <aside id="portalSidebar"></aside>
+  <div class="portal-content-col">
+    <header id="portalHeader"></header>
+    <main id="mainContent"></main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/db-client.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/portal-nav-data.js"></script>
+<script src="js/portal-widgets.js"></script>
+<script src="js/portal-shell.js"></script>
+<script src="js/main.js"></script>
+<script src="js/investor.js"></script>
+</body>
+</html>

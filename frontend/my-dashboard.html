@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>My Services | EEMMIC</title>
+<meta name="description" content="Your EEMMIC portal services, applications, submissions, and investments in one place.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23101014%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22Arial%22 fill=%22%23FFD400%22 text-anchor=%22middle%22>E</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/portal.css">
+</head>
+<body data-page-title="My Services" data-page-subtitle="Your EEMMIC portal access, applications, and account activity.">
+
+<div class="page-loader" id="pageLoader"><div class="loader-mark">E</div></div>
+
+<div id="portalApp" style="display:none;">
+  <aside id="portalSidebar"></aside>
+  <div class="portal-content-col">
+    <header id="portalHeader"></header>
+    <main id="mainContent">
+
+      <div id="serviceNotices" style="margin-bottom:20px;"></div>
+
+      <div class="portal-card__head" style="margin-bottom:14px;"><h3>My services</h3></div>
+      <div class="portal-grid portal-grid--3" id="servicesGrid" style="margin-bottom:28px;"></div>
+
+      <div class="form-card reveal" style="max-width:640px; margin-bottom:32px;">
+        <div class="form-success" id="formSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;flex-shrink:0;"><path d="M20 6L9 17l-5-5"/></svg>
+          Submitted — an admin will review your request.
+        </div>
+        <div class="form-card__head">
+          <div class="form-card__eyebrow">Apply</div>
+          <h2 style="font-size:1.2rem; margin-bottom:8px;">Apply for another service.</h2>
+        </div>
+        <form id="requirementForm">
+          <div class="field">
+            <label for="service">Framework</label>
+            <select id="service">
+              <option value="evaluation">Evaluation</option>
+              <option value="management">Management</option>
+              <option value="marketplace">Marketplace</option>
+              <option value="investment">Investment</option>
+            </select>
+          </div>
+          <div class="field"><label for="message">Tell us what you need</label><textarea id="message" rows="3" required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit</button>
+        </form>
+      </div>
+
+      <div class="portal-card__head" style="margin-bottom:14px;"><h3>My submissions</h3></div>
+      <div class="portal-table-wrap" style="margin-bottom:32px;">
+        <table class="portal-table">
+          <thead><tr><th>Submitted</th><th>Framework</th><th>Message</th><th>Status</th></tr></thead>
+          <tbody id="submissionsBody"><tr><td colspan="4" class="portal-empty">Loading…</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="portal-grid portal-grid--2" id="investStatsRow" style="margin-bottom:14px; max-width:480px;"></div>
+      <div class="portal-card__head" style="margin-bottom:14px;"><h3>My investments</h3></div>
+      <div class="portal-table-wrap">
+        <table class="portal-table">
+          <thead><tr><th>Company</th><th>Amount</th><th>Date</th><th>Status</th><th>P&amp;L</th></tr></thead>
+          <tbody id="investmentsBody"><tr><td colspan="5" class="portal-empty">Loading…</td></tr></tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/db-client.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/portal-nav-data.js"></script>
+<script src="js/portal-widgets.js"></script>
+<script src="js/portal-shell.js"></script>
+<script src="js/main.js"></script>
+<script src="js/my-dashboard.js"></script>
+</body>
+</html>

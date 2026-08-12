@@ -1,0 +1,15 @@
+# Not part of the deployed site (frontend/ is what vercel.json actually serves) —
+# excluding these keeps the deployment upload small and avoids any confusion
+# about which copy of the site is live.
+dist/
+dist.zip
+
+# Reference/status docs — useful in the repo, not needed in the deployment bundle.
+BACKEND-PLAN.md
+BACKEND-STATUS.md
+PROJECT-STATUS.md
+EEMMIC-Research-Briefing.txt
+supabase/
+
+# Editor/tooling
+.claude/

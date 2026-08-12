@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Log In | EEMMIC</title>
+<meta name="description" content="Log in to your EEMMIC account.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23101014%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22Arial%22 fill=%22%23FFD400%22 text-anchor=%22middle%22>E</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="page-loader" id="pageLoader"><div class="loader-mark">E</div></div>
+
+<header class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="/" class="logo"><span class="logo-mark">E</span><span class="logo-text">EEMMIC</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/solutions" class="nav-link">Solutions</a>
+      <div class="nav-item has-dropdown">
+        <a href="/projects" class="nav-link">EMMIC</a>
+        <button class="dropdown-caret-btn" aria-label="Toggle EMMIC menu" aria-expanded="false"><svg class="dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-menu">
+          <a href="/evaluation" class="dropdown-link">Evaluation</a>
+          <a href="/management" class="dropdown-link">Management</a>
+          <a href="/marketplace" class="dropdown-link">Marketplace</a>
+          <a href="/investment" class="dropdown-link">Investment</a>
+        </div>
+      </div>
+      <a href="/sustainability" class="nav-link">Sustainability</a>
+      <a href="/innovation" class="nav-link">Innovation</a>
+      <a href="/contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="navbar-actions">
+      <a href="/contact" class="btn btn-primary btn-sm">Get in Touch</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="auth-shell">
+    <div class="container">
+      <div class="form-card reveal">
+        <div class="form-card__head">
+          <div class="form-card__eyebrow">Account</div>
+          <h1 style="font-size:1.7rem; margin-bottom:8px;">Welcome back.</h1>
+          <p style="color:var(--color-text-muted); font-size:0.94rem;">Buyers, suppliers, investors, and admins all log in here. Accounts are created by an EEMMIC admin — look for an invite email if you don't have one yet.</p>
+        </div>
+        <form id="loginForm">
+          <div class="field"><label for="email">Email Address</label><input type="email" id="email" required></div>
+          <div class="field"><label for="password">Password</label><input type="password" id="password" required minlength="6"></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Log In
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/db-client.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
